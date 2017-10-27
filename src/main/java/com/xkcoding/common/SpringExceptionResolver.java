@@ -23,16 +23,16 @@ public class SpringExceptionResolver implements HandlerExceptionResolver {
 				JsonData result = JsonData.fail(ex.getMessage());
 				mv = new ModelAndView("jsonView", result.toMap());
 			} else {
-				log.error("unknown json exception, url:" + url, ex);
+				log.error("【未知的 JSON 请求异常】, 请求 URL：{}，异常堆栈：{}", url, ex);
 				JsonData result = JsonData.fail(defaultMsg);
 				mv = new ModelAndView("jsonView", result.toMap());
 			}
 		} else if (url.endsWith(".page")) {
-			log.error("unknown page exception, url:" + url, ex);
+			log.error("【未知的 页面 请求异常】, 请求 URL：{}，异常堆栈：{}", url, ex);
 			JsonData result = JsonData.fail(defaultMsg);
 			mv = new ModelAndView("exception", result.toMap());
 		} else {
-			log.error("unknow exception, url:" + url, ex);
+			log.error("【未知的请求异常】, 请求 URL：{}，异常堆栈：{}", url, ex);
 			JsonData result = JsonData.fail(defaultMsg);
 			mv = new ModelAndView("jsonView", result.toMap());
 		}
