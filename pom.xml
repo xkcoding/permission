@@ -23,6 +23,7 @@
 		<validator.api.version>1.1.0.Final</validator.api.version>
 		<hibernate.validator.version>5.3.5.Final</hibernate.validator.version>
 		<jedis.version>2.9.0</jedis.version>
+		<useragent.version>1.20</useragent.version>
 		<commons.email.version>1.5</commons.email.version>
 		<commons.collections.version>3.2.2</commons.collections.version>
 		<commons.codec.version>1.11</commons.codec.version>
@@ -169,6 +170,11 @@
 		</dependency>
 
 		<!--tools-->
+		<dependency>
+			<groupId>eu.bitwalker</groupId>
+			<artifactId>UserAgentUtils</artifactId>
+			<version>${useragent.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>commons-collections</groupId>
 			<artifactId>commons-collections</artifactId>
